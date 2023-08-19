@@ -5,8 +5,10 @@ export default {
         extend: {
             colors: {
                 primary: '#a445ed',
+                secondary: '#757575',
             },
         },
     },
+    darkMode: 'class',
     plugins: [],
 };
