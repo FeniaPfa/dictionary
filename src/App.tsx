@@ -6,7 +6,7 @@ import './index.css';
 function App() {
     const { data, getData, isLoading, error } = useWord('keyboard');
 
-    const renderWord = () => (error ? <Error /> : <WordInfo data={data} />);
+    const renderWord = () => (error ? <Error message={error} /> : <WordInfo data={data} />);
 
     return (
         <ThemeProvider>

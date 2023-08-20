@@ -1,10 +1,9 @@
+import { useContext } from 'react';
 import logo from './../assets/logo.svg';
 import moonIcon from './../assets/icon-moon.svg';
 import arrowDownIcon from './../assets/icon-arrow-down.svg';
-import { ThemeToggler } from './ThemeToggler';
-import { FontSelector } from './FontSelector';
-import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { FontSelector, ThemeToggler } from '.';
 
 export const Header = () => {
     const { font, toggleFontSelector, isFontSelectorOpen } = useContext(ThemeContext);

@@ -1,4 +1,4 @@
-import { Meaning } from './Meaning';
+import { Meaning } from '.';
 import type { Meaning as IMeaning } from '../types/response';
 
 type Props = {

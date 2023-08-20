@@ -1,7 +1,5 @@
+import { Meanings, Source, Word } from '.';
 import { WordData } from '../types/response';
-import { Meanings } from './Meanings';
-import { Source } from './Source';
-import { Word } from './Word';
 
 type Props = {
     data: WordData | null;
