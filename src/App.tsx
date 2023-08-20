@@ -18,9 +18,9 @@ function App() {
                 <p>Cargando...</p>
             ) : (
                 <>
-                    <Word />
-                    <Meanings meanings={data.meanings} />
-                    <Source source={data.sourceUrls} />
+                    <Word word={data!.word} phonetics={data!.phonetics} />
+                    <Meanings meanings={data!.meanings} />
+                    <Source source={data!.sourceUrls} />
                 </>
             )}
         </Layout>

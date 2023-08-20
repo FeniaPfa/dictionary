@@ -5,7 +5,7 @@ import type { WordData } from '../types/response';
 export const useWord = (word: string) => {
     const [data, setData] = useState<WordData | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [error, setError] = useState<any | null>(null);
+    const [error, setError] = useState<unknown | null>(null);
 
     const getData = async (word: string) => {
         try {

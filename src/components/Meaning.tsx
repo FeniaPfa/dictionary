@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import type { Meaning as IMeaning } from '../types/response';
 
 type Props = {

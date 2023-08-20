@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const SearchInput = ({ getData }: Props) => {
-    const [searchWord, setSearchWord] = useState('house');
+    const [searchWord, setSearchWord] = useState('');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;

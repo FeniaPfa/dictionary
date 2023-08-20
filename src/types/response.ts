@@ -4,7 +4,7 @@ export interface WordData {
     phonetics: Phonetic[];
     meanings: Meaning[];
     license: License;
-    sourceUrls: string[];
+    sourceUrls: string;
 }
 
 export interface Meaning {
@@ -21,7 +21,7 @@ interface Definition {
     example?: string;
 }
 
-interface Phonetic {
+export interface Phonetic {
     text: string;
     audio: string;
     sourceUrl?: string;
