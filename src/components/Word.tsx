@@ -20,7 +20,10 @@ export const Word = ({ word, phonetics }: Props) => {
                 <h1 className="text-[2rem] sm:text-[4rem] font-bold dark:text-white">{word}</h1>
                 <span className="text-primary text-lg sm:text-2xl">{pronuntiation?.text}</span>
             </div>
-            <button onClick={handleAudio}>
+            <button
+                onClick={handleAudio}
+                disabled={!pronuntiation?.audio}
+                className="disabled:cursor-not-allowed disabled:grayscale">
                 <img src={playIcon} alt="Play phonetic" />
             </button>
         </section>
