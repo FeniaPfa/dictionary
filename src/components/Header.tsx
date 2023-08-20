@@ -5,7 +5,7 @@ import { ThemeToggler } from './ThemeToggler';
 
 export const Header = () => {
     return (
-        <header className="flex justify-between items-center gap-4 mb-16">
+        <header className="flex justify-between items-center gap-4 mb-8">
             <img src={logo} />
             <div className="flex gap-4">
                 <span>Mono</span>

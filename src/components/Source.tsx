@@ -6,7 +6,7 @@ type Props = {
 
 export const Source = ({ source }: Props) => {
     return (
-        <footer className="flex gap-6">
+        <footer className="flex gap-6 flex-wrap">
             <span className="text-secondary">Source</span>
             <a href={source} className="flex gap-2">
                 {source} <img src={linkIcon} />
