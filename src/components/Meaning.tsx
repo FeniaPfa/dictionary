@@ -17,7 +17,7 @@ export const Meaning = ({ data }: Props) => {
                 {data.definitions.map((item, index) => (
                     <div key={index} className="flex flex-col gap-4">
                         <li className="marker:text-primary">{item.definition}</li>
-                        <p className="text-secondary text-lg">{item?.example}</p>
+                        {item.example && <p className="text-secondary text-lg">{item.example}</p>}
                     </div>
                 ))}
             </ul>
@@ -25,7 +25,7 @@ export const Meaning = ({ data }: Props) => {
             {data.synonyms.length !== 0 && (
                 <div className="flex gap-5">
                     <h3 className="text-secondary sm:text-xl">Synonyms</h3>
-                    <ul className="flex gap-4 items-center text-primary font-bold sm:text-xl">
+                    <ul className="flex flex-wrap gap-4 items-center text-primary font-bold sm:text-xl">
                         {data.synonyms.map((item) => (
                             <li key={item}>{item}</li>
                         ))}
