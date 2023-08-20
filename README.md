@@ -4,6 +4,7 @@ Aplicación para consultar definiciones y sinónimos de palabras en inglés con 
 
 -   ✅ Dark Mode
 -   ✅ Responsive
+-   ✅ Selección entre fuentes Sans-serif, Serif y Mono
 
 ## 🚀 Deploy
 
