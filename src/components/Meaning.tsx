@@ -8,14 +8,14 @@ export const Meaning = ({ data }: Props) => {
     return (
         <article className="flex flex-col gap-6">
             <div className="flex items-center">
-                <h2 className="mr-4 italic text-lg sm:text-2xl">{data.partOfSpeech}</h2>
+                <h2 className="mr-4 italic text-lg sm:text-2xl dark:text-white">{data.partOfSpeech}</h2>
                 <hr className="h-[1px] bg-gray-200 w-full" />
             </div>
             <span className="sm:text-xl text-secondary">Meaning</span>
             <ul className="list-disc list-inside text-lg gap-4 flex flex-col">
                 {data.definitions.map((item, index) => (
                     <div key={index} className="flex flex-col gap-4">
-                        <li className="marker:text-primary">{item.definition}</li>
+                        <li className="marker:text-primary dark:text-white">{item.definition}</li>
                         {item.example && <p className="text-secondary text-lg">{item.example}</p>}
                     </div>
                 ))}

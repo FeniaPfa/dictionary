@@ -15,9 +15,9 @@ export const FontSelector = () => {
     };
 
     return (
-        <ul className="absolute right-0 w-44 flex flex-col gap-4 cursor-pointer bg-white rounded-2xl shadow-2xl p-6 z-10">
+        <ul className="absolute right-0 w-44 flex flex-col gap-4 cursor-pointer dark:shadow-primary bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 z-10">
             {fonts.map((item) => (
-                <li onClick={() => handleFont(item)} className={`${item.class} font-bold hover:text-primary`}>
+                <li onClick={() => handleFont(item)} className={`${item.class} font-bold dark:text-white hover:text-primary`}>
                     {item.text}
                 </li>
             ))}
