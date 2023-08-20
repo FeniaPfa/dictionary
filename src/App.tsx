@@ -4,17 +4,25 @@ import { Meanings } from './components/Meanings';
 import { SearchInput } from './components/SearchInput';
 import { Source } from './components/Source';
 import { Word } from './components/Word';
+import { useWord } from './hooks/useWord';
 import './index.css';
 
 function App() {
-    // call api
+    const { data, getData, isLoading } = useWord('keyboard');
+
     return (
         <Layout>
             <Header />
-            <SearchInput />
-            <Word />
-            <Meanings />
-            <Source />
+            <SearchInput getData={getData} />
+            {isLoading ? (
+                <p>Cargando...</p>
+            ) : (
+                <>
+                    <Word />
+                    <Meanings meanings={data.meanings} />
+                    <Source source={data.sourceUrls} />
+                </>
+            )}
         </Layout>
     );
 }
