@@ -1,21 +1,21 @@
-import { Header } from './components/Header';
-import { Layout } from './components/Layout';
-import { Meanings } from './components/Meanings';
-import { SearchInput } from './components/SearchInput';
-import { Source } from './components/Source';
-import { Word } from './components/Word';
+import { Error, Header, Layout, SearchInput, WordInfo } from './components';
+import { ThemeProvider } from './context/ThemeContext';
+import { useWord } from './hooks/useWord';
 import './index.css';
 
 function App() {
-    // call api
+    const { data, getData, isLoading, error } = useWord('keyboard');
+
+    const renderWord = () => (error ? <Error message={error} /> : <WordInfo data={data} />);
+
     return (
-        <Layout>
-            <Header />
-            <SearchInput />
-            <Word />
-            <Meanings />
-            <Source />
-        </Layout>
+        <ThemeProvider>
+            <Layout>
+                <Header />
+                <SearchInput getData={getData} />
+                {isLoading ? <p>Loading...</p> : renderWord()}
+            </Layout>
+        </ThemeProvider>
     );
 }
 

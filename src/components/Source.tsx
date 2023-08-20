@@ -1,11 +1,15 @@
 import linkIcon from './../assets/icon-new-window.svg';
 
-export const Source = () => {
+type Props = {
+    source: string | undefined;
+};
+
+export const Source = ({ source }: Props) => {
     return (
-        <footer className="flex gap-6">
+        <footer className="flex gap-6 flex-wrap">
             <span className="text-secondary">Source</span>
-            <a href="" className="flex gap-2">
-                {'link'} <img src={linkIcon} />
+            <a href={source} className="flex gap-2 dark:text-white" target="_blank">
+                {source} <img src={linkIcon} alt="Open link" />
             </a>
         </footer>
     );
