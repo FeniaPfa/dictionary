@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react';
 import { getWord } from '../services/getWord';
-import type { WordData } from '../types/response';
+import type { Error, WordData } from '../types/response';
 
 export const useWord = (word: string) => {
     const [data, setData] = useState<WordData | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [error, setError] = useState<unknown | null>(null);
+    const [error, setError] = useState<Error | null>(null);
+    const [isError, setIsError] = useState<boolean>(false);
 
     const getData = async (word: string) => {
         try {
             const wordData = await getWord(word);
             setData(wordData);
             setIsLoading(false);
+            setError(null);
         } catch (err) {
-            setError(err);
+            console.log(err);
+            setError(err.response.data);
+            setIsError(true);
             setIsLoading(false);
         }
     };
@@ -21,5 +25,5 @@ export const useWord = (word: string) => {
         getData(word);
     }, []);
 
-    return { data, isLoading, error, setData, getData };
+    return { data, isLoading, error, getData, isError };
 };

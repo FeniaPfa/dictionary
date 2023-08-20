@@ -1,7 +1,7 @@
 import linkIcon from './../assets/icon-new-window.svg';
 
 type Props = {
-    source: string;
+    source: string | undefined;
 };
 
 export const Source = ({ source }: Props) => {

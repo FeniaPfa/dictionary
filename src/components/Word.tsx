@@ -2,12 +2,12 @@ import type { Phonetic } from '../types/response';
 import playIcon from './../assets/icon-play.svg';
 
 type Props = {
-    word: string;
-    phonetics: Phonetic[];
+    word: string | undefined;
+    phonetics: Phonetic[] | undefined;
 };
 
 export const Word = ({ word, phonetics }: Props) => {
-    const pronuntiation = phonetics.find((item) => item.audio && item.text);
+    const pronuntiation = phonetics!.find((item) => item.audio && item.text);
     const audio = new Audio(pronuntiation?.audio);
 
     const handleAudio = () => {

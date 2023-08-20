@@ -32,3 +32,9 @@ interface License {
     name: string;
     url: string;
 }
+
+export interface Error {
+    title: string;
+    message: string;
+    resolution: string;
+}

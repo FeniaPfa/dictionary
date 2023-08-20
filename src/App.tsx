@@ -1,30 +1,19 @@
-import { Header } from './components/Header';
-import { Layout } from './components/Layout';
-import { Meanings } from './components/Meanings';
-import { SearchInput } from './components/SearchInput';
-import { Source } from './components/Source';
-import { Word } from './components/Word';
+import { Error, Header, Layout, SearchInput, WordInfo } from './components';
 import { ThemeProvider } from './context/ThemeContext';
 import { useWord } from './hooks/useWord';
 import './index.css';
 
 function App() {
-    const { data, getData, isLoading } = useWord('keyboard');
+    const { data, getData, isLoading, error } = useWord('keyboard');
+
+    const renderWord = () => (error ? <Error /> : <WordInfo data={data} />);
 
     return (
         <ThemeProvider>
             <Layout>
                 <Header />
                 <SearchInput getData={getData} />
-                {isLoading ? (
-                    <p>Cargando...</p>
-                ) : (
-                    <>
-                        <Word word={data!.word} phonetics={data!.phonetics} />
-                        <Meanings meanings={data!.meanings} />
-                        <Source source={data!.sourceUrls} />
-                    </>
-                )}
+                {isLoading ? <p>Loading...</p> : renderWord()}
             </Layout>
         </ThemeProvider>
     );
