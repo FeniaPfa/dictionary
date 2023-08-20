@@ -16,6 +16,7 @@ export const SearchInput = ({ getData }: Props) => {
     const handleSearch = (e: SyntheticEvent) => {
         e.preventDefault();
         getData(searchWord);
+        setSearchWord('');
     };
 
     return (

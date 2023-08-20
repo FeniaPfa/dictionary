@@ -14,7 +14,7 @@ export const useWord = (word: string) => {
             setData(wordData);
             setIsLoading(false);
             setError(null);
-        } catch (err) {
+        } catch (err: any) {
             console.log(err);
             setError(err.response.data);
             setIsError(true);
