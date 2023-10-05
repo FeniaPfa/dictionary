@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { ThemeContext } from './../context/ThemeContext';
+import { ContextType, ThemeContext } from './../context/ThemeContext';
 import type { FontList } from '../types/Font';
 
 export const FontSelector = () => {
-    const { changeFont } = useContext(ThemeContext);
+    const { changeFont } = useContext(ThemeContext) as ContextType;
     const fonts: FontList[] = [
         { class: 'sans', text: 'Sans Serif' },
         { class: 'serif', text: 'Serif' },
@@ -11,7 +11,7 @@ export const FontSelector = () => {
     ];
 
     const handleFont = (font: FontList) => {
-        changeFont!(font);
+        changeFont(font);
     };
 
     return (
