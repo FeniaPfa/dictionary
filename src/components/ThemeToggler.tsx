@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import { ContextType, ThemeContext } from '../context/ThemeContext';
 
 export const ThemeToggler = () => {
-    const { toggleMode } = useContext(ThemeContext);
+    const { toggleMode } = useContext(ThemeContext) as ContextType;
 
     return (
         <label onChange={toggleMode} htmlFor="AcceptConditions" className="relative h-6 w-12 cursor-pointer">

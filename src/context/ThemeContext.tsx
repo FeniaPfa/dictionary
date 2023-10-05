@@ -1,7 +1,7 @@
 import { useState, createContext, ReactNode } from 'react';
 import type { FontList } from '../types/Font';
 
-type Context = {
+export type ContextType = {
     font: FontList;
     darkMode: boolean;
     toggleMode: () => void;
@@ -10,7 +10,7 @@ type Context = {
     isFontSelectorOpen: boolean;
 };
 
-export const ThemeContext = createContext<Partial<Context>>({});
+export const ThemeContext = createContext<ContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const [font, setFont] = useState({ class: 'sans', text: 'Sans Serif' });
