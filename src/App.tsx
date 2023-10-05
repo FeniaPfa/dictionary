@@ -4,9 +4,9 @@ import { useWord } from './hooks/useWord';
 import './index.css';
 
 function App() {
-    const { data, getData, isLoading, error } = useWord('keyboard');
+    const { data , getData, isLoading, error } = useWord('keyboard');
 
-    const renderWord = () => (error ? <Error message={error} /> : <WordInfo data={data} />);
+    const renderWord = () => (error ? <Error message={error} /> : (data ? <WordInfo data={data}/> : null ));
 
     return (
         <ThemeProvider>

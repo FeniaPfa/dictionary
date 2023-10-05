@@ -13,7 +13,7 @@ export const Header = () => {
             <img src={logo} alt="Logo" />
             <div className="flex gap-4">
                 <div className="relative">
-                    <span className={`${font!.class} font-bold text-lg dark:text-white`}>{font!.text}</span>
+                    <span className={`${font.class} font-bold text-lg dark:text-white`}>{font.text}</span>
                     <button className="ml-4" onClick={toggleFontSelector}>
                         <img src={arrowDownIcon} alt="Toggle font selector" />
                     </button>
