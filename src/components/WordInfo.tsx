@@ -2,7 +2,7 @@ import { Meanings, Source, Word } from '.';
 import { WordData } from '../types/response';
 
 type Props = {
-    data: WordData | null;
+    data: WordData;
 };
 
 export const WordInfo = ({ data }: Props) => {
